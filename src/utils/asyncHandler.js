@@ -4,6 +4,11 @@ const asyncHandler = (requestHandler) =>{
     	(req ,res , next)=>{
             Promise.resolve(requestHandler(req ,res , next)).catch((err)=>{next(err)})
         }
+
+        // chat GPT said :===>
+        // const asyncHandler = (requestHandler) => (req, res, next) => {
+        //         Promise.resolve(requestHandler(req, res, next)).catch(next); // Pass the error to the next middleware directly
+        //     };
 }
 export {asyncHandler}
 
